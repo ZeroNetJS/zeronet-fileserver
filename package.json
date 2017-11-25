@@ -30,10 +30,13 @@
   },
   "homepage": "https://github.com/ZeroNetJS/zeronet-js#readme",
   "dependencies": {
-    "zeronet-protocol": "~0.0.2"
+    "debug": "^3.1.0",
+    "inet-tools": "^0.1.1",
+    "pull-stream": "^3.6.1"
   },
   "devDependencies": {
-    "aegir": "^12.2.0"
+    "aegir": "^12.2.0",
+    "zeronet-crypto": "0.0.4"
   },
   "directories": {
     "test": "test",

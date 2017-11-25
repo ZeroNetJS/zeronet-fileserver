@@ -3,7 +3,7 @@
 
 'use strict'
 
-const pack = require('zeronet-protocol/src/zero/pack')
+const pack = require('./pack')
 const debug = require('debug')
 const log = debug('zeronet:fileserver')
 const pull = require('pull-stream')
