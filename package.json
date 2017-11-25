@@ -1,6 +1,6 @@
 {
   "name": "zeronet-fileserver",
-  "version": "0.0.1-alpha18",
+  "version": "0.0.1",
   "description": "ZeroNet fileserver",
   "main": "src/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/ZeroNetJS/zeronet-js#readme",
   "dependencies": {
-    "zeronet-protocol": "file:../zeronet-protocol"
+    "zeronet-protocol": "~0.0.2"
   },
   "devDependencies": {
     "aegir": "^12.2.0"
