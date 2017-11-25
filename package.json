@@ -31,5 +31,13 @@
   "homepage": "https://github.com/ZeroNetJS/zeronet-js#readme",
   "dependencies": {
     "zeronet-protocol": "file:../zeronet-protocol"
+  },
+  "devDependencies": {
+    "aegir": "^12.2.0"
+  },
+  "directories": {
+    "test": "test",
+    "src": "src",
+    "lib": "src"
   }
 }
