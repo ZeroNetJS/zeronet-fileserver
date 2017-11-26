@@ -13,7 +13,7 @@
     "release-minor": "aegir release --type minor",
     "release-major": "aegir release --type major",
     "coverage": "aegir coverage",
-    "coverage-publish": "aegir-coverage publish"
+    "coverage-publish": "aegir coverage -u"
   },
   "keywords": [
     "zeronet",
@@ -30,9 +30,9 @@
   },
   "homepage": "https://github.com/ZeroNetJS/zeronet-js#readme",
   "dependencies": {
-    "debug": "^3.1.0",
-    "inet-tools": "^0.1.1",
-    "pull-stream": "^3.6.1"
+    "debug": "~3.1.0",
+    "inet-tools": "~0.1.1",
+    "pull-stream": "~3.6.1"
   },
   "devDependencies": {
     "aegir": "^12.2.0",
