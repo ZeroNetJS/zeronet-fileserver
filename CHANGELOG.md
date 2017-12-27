@@ -1,3 +1,13 @@
+<a name="0.0.7"></a>
+## [0.0.7](https://github.com/ZeroNetJS/zeronet-fileserver/compare/v0.0.6...v0.0.7) (2017-12-27)
+
+
+### Features
+
+* Onion pack/unpack ([b736eab](https://github.com/ZeroNetJS/zeronet-fileserver/commit/b736eab))
+
+
+
 <a name="0.0.6"></a>
 ## 0.0.6 (2017-11-25)
 
