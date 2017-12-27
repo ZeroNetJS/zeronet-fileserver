@@ -12,9 +12,21 @@ const map = {
   '\x05\x01\xad\xf0\xd8\x0f': '5.1.173.240:4056'
 }
 
-describe('pack', () => {
+const map2 = {
+  '\xd9\xb5G\xaf\x8f\x87\x95B\x8b\x8c\xd6\x11': '3g2upl4pq6kufc4m.onion:4566',
+  '\xbb\x0f\xdf\xa69\x8bm\xe46KP\x00': 'xmh57jrzrnw6insl.onion:80'
+}
+
+describe('pack ip4', () => {
   Object.keys(map).forEach(packed => {
-    it('should unpack ' + crypto.PythonJSONDump(packed) + ' as ' + map[packed], () => assert.equal(pack.v4.unpack(packed), map[packed]))
+    it('should unpack ' + crypto.PythonJSONDump(packed) + ' as ' + map[packed], () => assert.equal(pack.v4.unpack(packed).join(':'), map[packed]))
     it('should pack ' + map[packed] + ' as ' + crypto.PythonJSONDump(packed), () => assert.equal(pack.v4.pack(map[packed]), packed))
+  })
+})
+
+describe('pack onion', () => {
+  Object.keys(map2).forEach(packed => {
+    it('should unpack ' + crypto.PythonJSONDump(packed) + ' as ' + map2[packed], () => assert.equal(pack.onion.unpack(packed).join(':'), map2[packed]))
+    it('should pack ' + map2[packed] + ' as ' + crypto.PythonJSONDump(packed), () => assert.equal(pack.onion.pack(map2[packed]), packed))
   })
 })

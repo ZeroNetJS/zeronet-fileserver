@@ -24,18 +24,9 @@ in/out ->
 module.exports = function FileServer (protocol, zeronet) {
   protocol.handle('getFile', { in: {
     protobuf: {
-      1: [
-        'string',
-        'site'
-      ],
-      2: [
-        'string',
-        'inner_path'
-      ],
-      3: [
-        'int64',
-        'location'
-      ]
+      1: 'string site',
+      2: 'string inner_path',
+      3: 'int64 location'
     },
     strict: {
       site: 'string',
@@ -45,18 +36,9 @@ module.exports = function FileServer (protocol, zeronet) {
   },
     out: {
       protobuf: {
-        1: [
-          'int64',
-          'size'
-        ],
-        2: [
-          'int64',
-          'location'
-        ],
-        3: [
-          'bytes',
-          'body'
-        ]
+        1: 'int64 size',
+        2: 'int64 location',
+        3: 'bytes body'
       },
       strict: {
         size: 'number',
@@ -88,10 +70,7 @@ module.exports = function FileServer (protocol, zeronet) {
 
   protocol.handle('hasZite', { in: {
     protobuf: {
-      1: [
-        'string',
-        'zite'
-      ]
+      1: 'string zite'
     },
     strict: {
       zite: 'string'
@@ -99,10 +78,7 @@ module.exports = function FileServer (protocol, zeronet) {
   },
     out: {
       protobuf: {
-        1: [
-          'bool',
-          'has'
-        ]
+        1: 'bool has'
       },
       strict: {
         has: 'boolean'
@@ -117,22 +93,10 @@ module.exports = function FileServer (protocol, zeronet) {
 
   protocol.handle('pex', { in: {
     protobuf: {
-      1: [
-        'string',
-        'site'
-      ],
-      2: [
-        'repeated string',
-        'peers'
-      ],
-      3: [
-        'repeated string',
-        'peers_onion'
-      ],
-      4: [
-        'int32',
-        'need'
-      ]
+      1: 'string site',
+      2: 'repeated string peers',
+      3: 'repeated string peers_onion',
+      4: 'int32 need'
     },
     strict: {
       site: 'string',
@@ -143,10 +107,7 @@ module.exports = function FileServer (protocol, zeronet) {
   },
     out: {
       protobuf: {
-        1: [
-          'repeated string',
-          'peers'
-        ]
+        1: 'repeated string peers'
       },
       strict: {
         peers: Array.isArray
@@ -156,7 +117,7 @@ module.exports = function FileServer (protocol, zeronet) {
     if (data.peers) { // parse peers. ignore len!=6, but i think it's an encoding error instead
       let unpack = data.peers.map(p => {
         try {
-          return pack.v4.unpack(p)
+          return pack.v4.unpack(p).join(':')
         } catch (e) {
         }
       }).filter(v => Boolean(v))
@@ -169,18 +130,9 @@ module.exports = function FileServer (protocol, zeronet) {
 
   protocol.handle('update', { in: {
     protobuf: {
-      1: [
-        'string',
-        'site'
-      ],
-      2: [
-        'string',
-        'inner_path'
-      ],
-      3: [
-        'string',
-        'body'
-      ]
+      1: 'string site',
+      2: 'string inner_path',
+      3: 'string body'
     },
     strict: {
       site: 'string',
@@ -190,10 +142,7 @@ module.exports = function FileServer (protocol, zeronet) {
   },
     out: {
       protobuf: {
-        1: [
-          'string',
-          'ok'
-        ]
+        1: 'string ok'
       },
       strict: {
         ok: 'string'
@@ -207,14 +156,8 @@ module.exports = function FileServer (protocol, zeronet) {
 
   protocol.handle('listModified', { in: {
     protobuf: {
-      1: [
-        'string',
-        'site'
-      ],
-      2: [
-        'int64',
-        'since'
-      ]
+      1: 'string site',
+      2: 'int64 since'
     },
     strict: {
       site: 'string',
@@ -240,10 +183,7 @@ module.exports = function FileServer (protocol, zeronet) {
 
   protocol.handle('getHashfield', { in: {
     protobuf: {
-      1: [
-        'string',
-        'site'
-      ]
+      1: 'string site'
     },
     strict: {
       site: 'string'
@@ -251,10 +191,7 @@ module.exports = function FileServer (protocol, zeronet) {
   },
     out: {
       protobuf: {
-        1: [
-          'string',
-          'hashfield_raw'
-        ]
+        1: 'string hashfield_raw'
       },
       strict: {
         hashfield_raw: 'string'
@@ -268,14 +205,8 @@ module.exports = function FileServer (protocol, zeronet) {
 
   protocol.handle('setHashfield', { in: {
     protobuf: {
-      1: [
-        'string',
-        'site'
-      ],
-      2: [
-        'string',
-        'hashfield_raw'
-      ]
+      1: 'string site',
+      2: 'string hashfield_raw'
     },
     strict: {
       site: 'string',
@@ -284,10 +215,7 @@ module.exports = function FileServer (protocol, zeronet) {
   },
     out: {
       protobuf: {
-        1: [
-          'string',
-          'ok'
-        ]
+        1: 'string ok'
       },
       strict: {
         ok: 'string'
@@ -301,10 +229,7 @@ module.exports = function FileServer (protocol, zeronet) {
 
   protocol.handle('findHashIds', { in: {
     protobuf: {
-      1: [
-        'string',
-        'site'
-      ],
+      1: 'string site',
       2: [
         'bytes', // FIXME: need to embed (int)=val data or just use an if in the request
         'hash_ids'
@@ -313,14 +238,8 @@ module.exports = function FileServer (protocol, zeronet) {
   },
     out: {
       protobuf: {
-        1: [
-          'repeated string',
-          'peers'
-        ],
-        2: [
-          'repeated string',
-          'peers_onion'
-        ]
+        1: 'repeated string peers',
+        2: 'repeated string peers_onion'
       },
       strict: {
         peers: Array.isArray,
