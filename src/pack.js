@@ -40,7 +40,7 @@ const Port = {
   }
 }
 
-module.exports.v4 = {
+module.exports.v4 = module.exports.ip4 = {
   pack: (ip, port) => {
     if (port === undefined) {
       port = ip.split(':')[1]
@@ -57,8 +57,6 @@ module.exports.v4 = {
     return [ip, Port.unpack(port)]
   }
 }
-
-module.exports.ip4 = module.exports.v4 // alias
 
 module.exports.onion = {
   pack: (addr, port) => {
