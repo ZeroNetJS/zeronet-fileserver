@@ -124,7 +124,7 @@ module.exports = function FileServer (protocol, zeronet) {
       log('got peers for', data.site, unpack.join(', ') || '<none>')
       zeronet.peerPool.addMany(unpack, data.site)
     }
-    cb('Hello. This ZeroNetJS client does not have this function implented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
+    cb('Hello. This ZeroNetJS client does not have this function implemented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
     // TODO: parse onion peers
   })
 
@@ -150,7 +150,7 @@ module.exports = function FileServer (protocol, zeronet) {
     }
   }, (data, cb) => {
     if (!zeronet.zites[data.site]) return cb(new Error('Unknown site'))
-    cb('Hello. This ZeroNetJS client does not have this function implented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
+    cb('Hello. This ZeroNetJS client does not have this function implemented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
     // TODO: finish
   })
 
@@ -177,7 +177,7 @@ module.exports = function FileServer (protocol, zeronet) {
     }
   }, (data, cb) => {
     if (!zeronet.zites[data.site]) return cb(new Error('Unknown site'))
-    cb('Hello. This ZeroNetJS client does not have this function implented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
+    cb('Hello. This ZeroNetJS client does not have this function implemented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
     // TODO: finish
   })
 
@@ -199,7 +199,7 @@ module.exports = function FileServer (protocol, zeronet) {
     }
   }, (data, cb) => {
     if (!zeronet.zites[data.site]) return cb(new Error('Unknown site'))
-    cb('Hello. This ZeroNetJS client does not have this function implented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
+    cb('Hello. This ZeroNetJS client does not have this function implemented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
     // TODO: finish
   })
 
@@ -223,7 +223,7 @@ module.exports = function FileServer (protocol, zeronet) {
     }
   }, (data, cb) => {
     if (!zeronet.zites[data.site]) return cb(new Error('Unknown site'))
-    cb('Hello. This ZeroNetJS client does not have this function implented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
+    cb('Hello. This ZeroNetJS client does not have this function implemented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
     // TODO: finish
   })
 
@@ -248,7 +248,7 @@ module.exports = function FileServer (protocol, zeronet) {
     }
   }, (data, cb) => {
     if (!zeronet.zites[data.site]) return cb(new Error('Unknown site'))
-    cb('Hello. This ZeroNetJS client does not have this function implented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
+    cb('Hello. This ZeroNetJS client does not have this function implemented yet. Please kindly ignore this peer.') // eslint-disable-line standard/no-callback-literal
     // TODO: finish
   })
 }
