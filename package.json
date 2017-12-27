@@ -37,7 +37,8 @@
     "pull-stream": "^3.6.1"
   },
   "devDependencies": {
-    "aegir": "^12.3.0"
+    "aegir": "^12.3.0",
+    "zeronet-crypto": "^0.1.0"
   },
   "directories": {
     "test": "test",
