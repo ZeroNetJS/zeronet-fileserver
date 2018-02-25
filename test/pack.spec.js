@@ -19,14 +19,14 @@ const map2 = {
 
 describe('pack ip4', () => {
   Object.keys(map).forEach(packed => {
-    it('should unpack ' + crypto.PythonJSONDump(packed) + ' as ' + map[packed], () => assert.equal(pack.v4.unpack(packed).join(':'), map[packed]))
-    it('should pack ' + map[packed] + ' as ' + crypto.PythonJSONDump(packed), () => assert.equal(pack.v4.pack(map[packed]), packed))
+    it('should unpack ' + crypto.json.dump(packed) + ' as ' + map[packed], () => assert.equal(pack.v4.unpack(packed).join(':'), map[packed]))
+    it('should pack ' + map[packed] + ' as ' + crypto.json.dump(packed), () => assert.equal(pack.v4.pack(map[packed]), packed))
   })
 })
 
 describe('pack onion', () => {
   Object.keys(map2).forEach(packed => {
-    it('should unpack ' + crypto.PythonJSONDump(packed) + ' as ' + map2[packed], () => assert.equal(pack.onion.unpack(packed).join(':'), map2[packed]))
-    it('should pack ' + map2[packed] + ' as ' + crypto.PythonJSONDump(packed), () => assert.equal(pack.onion.pack(map2[packed]), packed))
+    it('should unpack ' + crypto.json.dump(packed) + ' as ' + map2[packed], () => assert.equal(pack.onion.unpack(packed).join(':'), map2[packed]))
+    it('should pack ' + map2[packed] + ' as ' + crypto.json.dump(packed), () => assert.equal(pack.onion.pack(map2[packed]), packed))
   })
 })
